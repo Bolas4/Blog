@@ -1,0 +1,311 @@
+.button {
+  display:    	inline-block;
+  width:      	11.429rem;
+  padding:    	.928rem 0;
+  border:     	2px solid;
+  border-radius:  1.786rem;
+  text-align: 	center;
+}
+
+.button--primary-hollow {
+	border-color: 	#6200ea;
+	color:        	#6200ea;
+	background-color: transparent;
+  }
+
+  .button--primary-hollow:visited { color: #6200ea; }
+
+  .button--secondary-solid {
+	border:       	0;
+	color:        	#6200ea;
+	background-color: #ffffff;
+  }
+
+  .button--secondary-solid:visited { color: #6200ea; }
+
+  .button--secondary-hollow {
+	border-color: 	#ffffff;
+	color:        	#ffffff;
+	background-color: transparent;
+  }
+
+  .button--secondary-hollow:visited { color: #ffffff; }
+
+  .button--primary-hollow{
+    display:    	inline-block;
+    width:      	10rem;
+    padding:    	.928rem .75rem;
+    border:     	2px solid;
+    border-radius:  1.89rem;
+    font-size: .8rem;
+  }
+
+  .button--secondary-hollow{
+    display:    	inline-block;
+    width:      	10rem;
+    padding:    	.928rem .75rem;
+    border:     	2px solid;
+    border-radius:  1.89rem;
+    font-size: .8rem;
+  }
+
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+/**
+ * 1. Te dwa zbiory reguł tworzą CSS hack, za pomocą którego możemy
+ * wyśrodkować zawartość headera. Więcej o tej technice możesz przeczytać
+ * w rozdziale Nagłówki modułu Popularne komponenty.
+ *
+ * 2. Używamy tego right margin, aby logo pojawiło się w tym samym
+ * miejscu, w którym było w prototypie projektu.
+ */
+
+.header {
+  height:       	8vh;
+  background-color: #6200ea;
+}
+
+  .header__wrapper { /* [1] */
+	display:  table;
+	height:   100%;
+  }
+
+	.header__content { /* [1] */
+  	display:    	table-cell;
+  	vertical-align: middle;
+	}
+
+  	.header__subscribe,
+  	.logo {
+    	float: left;
+  	}
+
+  	.header__subscribe {
+    	margin-right: 27.477%; /* [2] */
+  	}
+
+
+/*-------------------------------*\
+   #NAVIGATION
+\*-------------------------------*/
+
+.navigation{
+  height: 80px;
+  background-color: #fff;
+}
+
+.navbar{
+  display:  table;
+  height:   100%;
+
+}
+
+.nav__link--container{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height:     	100%;
+}
+
+.nav__link {
+    	padding-bottom: 2.1rem; /* [3] */
+    	margin-right:   2.5rem;
+    	color:      	#211138;
+  	}
+
+a.nav__link:last-child { margin-right: 0; }
+
+.nav__link:visited{ color: #211138 ;}
+
+.nav__link:hover{
+  border-bottom: solid;
+  color: #6200ea;
+  border-color: #6200ea;
+}
+
+
+
+
+/*------------------------------------*\
+  #WPIS
+\*------------------------------------*/
+
+/**
+ * 1. Potrzebujemy deklaracji display: block;, ponieważ w przeciwnym razie
+ * między obrazkiem a pozostałą zawartością będzie pusta przestrzeń
+ * o szerokości kilku pikseli. Dzieje się tak dlatego, że tag img jest domyślnie
+ * specjalnym elementem inline, więc ma na niego wpływ właściwość line-height.
+ * Aby tego uniknąć, łatwiej jest ustawić obraz jako element block.
+ */
+
+ .post {
+   border-radius:	1.071rem;
+   background-color: #ffffff;
+   padding:      	4.286rem 4.286rem 3.751rem 4.286rem;
+ }
+
+   .post__metadata { color: #b2acba; }
+
+   .post__lede { font-size: 1.429rem; }
+
+   .post__image {
+ 	display:   	block; /* [1] */
+ 	width:     	100%;
+ 	height:    	320px;
+ 	object-fit:	cover;
+ 	border-radius: 1.071rem 1.071rem 0 0;
+   }
+
+ .post--w-cover { border-radius: 0 0 1.071rem 1.071rem; }
+
+.post--featured{
+  color: #fff;
+  background-image: url('assets/blog/roberto-nickson-5ui0tfMC5ts-unsplash.jpg');
+  background-size: cover;
+}
+
+.post--featured h6,
+.post--featured h2,
+.post--featured p{
+  margin-bottom: 20px;
+}
+
+.post--featured h2{
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+
+.blog__text{
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+
+.post__lede2{
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1.15rem;
+}
+
+.post__text p,
+.post__text h6,
+.post__text h2{
+  margin-bottom: 20px;
+}
+
+.post--featured,
+.post__metadata{
+  font-size: 0.7rem;
+}
+
+.post--featured p{
+  line-height: 1.5rem;
+  font-weight: 100;
+  opacity: 0.7;
+}
+
+
+
+/*------------------------------------*\
+  #KARTA KATEGORII
+\*------------------------------------*/
+
+/**
+ * 1. Z pomocą tej własności, możemy wyświetlić wszystkie obrazy w
+ *  ładnych, kwadratowych ramkach, bez potrzeby kompresowania ich,
+ * niezależnie od ich oryginalnych proporcji.
+ *
+ * 2. Wszystkie tagi p mają domyślnie dolny margin, który zostanie dodany
+ * do paddingów kart, zatem górny i dolny padding nie będą tego samego
+ * rozmiaru. Ta reguła powoduje, że wielkość margin kart jest
+ * zerowa, dzięki czemu rozwiążemy nasz problem.
+ *
+ * 3. Ten modifier umożliwia poprawne wyświetlanie komponentów
+ * w sidebarze.
+ */
+
+ .category-card{
+   padding:          1.429rem;
+   border-radius:    1.071rem;
+   background-color: #fff;
+ }
+
+ .category-card__image{
+   float:         left;
+   width:         8.571rem;
+   height:        8.571rem;
+   margin-right:  1.429rem;
+   border-radius: .714rem;
+   object-fit:    cover;
+ }
+
+ .category__sidebar--text { color: #6200ea; }
+
+ .category-card__text { margin-bottom: 0; } /* [2] */
+
+.category-card-sidebar__text { border-radius: 0; } /* [3] */
+
+.sidebar-element__header{ border-radius: 1.071rem 1.071rem 0 0 ;}
+
+.sidebar-element__title{ margin-bottom: 0 ;}
+
+.sidebar-element__header{
+  padding:          1.643rem 0 1.571rem 0;
+  border-radius:    1.071rem 1.071rem 0 0;
+  text-align:       center;
+  background-color: #6200ea;
+  color:            #ffffff;
+}
+
+.sidebar-element__call-to-action {
+  padding:          1.214rem 2.143rem 1.286rem 2.143rem;
+  border-bottom:    1px solid;
+  border-color:     #f4f3f5;
+  background-color: #ffffff;
+  text-align:       center;
+}
+
+.sidebar-element__cta-link         { color: #b2acba ; }
+.sidebar-element__cta-link:visited { color: #b2acba ; }
+
+.sidebar-element__list{
+  list-style-type: none;
+  padding:         0;
+}
+
+.sidebar-element__list-item{
+  padding:      	1.214rem 2.143rem 1.286rem 2.143rem;
+  border-bottom:	1px solid;
+  border-color: 	#f4f3f5;
+  background-color: #ffffff;
+}
+
+.sidebar-elemet__list:last-child        { border-bottom: 0 ; }
+
+.sidebar-element__category-link         { color: #211138 ; }
+
+.sidebar-element__category-link:visited { color: #211138 ; }
+
+.footer{
+  height:           100px;
+  padding:          3.071rem 0 3rem 0;
+  text-align:       center;
+  background-color: #211138;
+}
+
+.footer__copyright{
+  text-transform: uppercase;
+  font-size:      .857rem;
+  font-weight:     bold;
+  letter-spacing:  .171rem;
+  color:           #b2acba;
+}
+
+.footer__brand-name,
+.footer__student-name{
+  color: #6200ea;
+}
